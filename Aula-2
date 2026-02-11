@@ -1,18 +1,24 @@
 create database supermercado;
 
-create table cliente(
-id_cliente int(10) not null,
-cpf varchar(14) not null,
+create table cliente (
+id int not null,
 nome varchar(50) not null,
-constraint pk_cliente primary key(id_cliente)
+cpf varchar(11) not null,
+constraint pk_id_cliente primary key (id)
 );
-
+ 
 create table produto(
-id_produto int(10) not null,
-nome varchar(20) not null,
+id int not null,
 descricao varchar(100) not null,
-valor decimal(16,2) not null
+cod_barras varchar(14),
+valor decimal(16,2)
 );
-
-alter table produtos add constraint pk_produto primary key(id_produto);
---não lembrei dos outros comandos usados na aula
+ 
+alter table produto add constraint pk_id_produto primary key (id)
+ 
+alter table produto add column situacao boolean not null
+ 
+alter table produto alter column descricao type varchar(200)
+ 
+alter table produto drop column situacao
+--drop table produto
