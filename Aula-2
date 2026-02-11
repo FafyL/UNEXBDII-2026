@@ -1,0 +1,17 @@
+create database supermercado;
+
+create table cliente(
+id_cliente int(10) not null,
+cpf varchar(14) not null,
+nome varchar(50) not null,
+constraint pk_cliente primary key(id_cliente)
+);
+
+create table produto(
+id_produto int(10) not null,
+nome varchar(20) not null,
+descricao varchar(100) not null,
+valor decimal(16,2) not null
+);
+
+alter table produtos add constraint pk_produto primary key(id_produto);
